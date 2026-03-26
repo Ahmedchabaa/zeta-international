@@ -1,0 +1,1796 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeta Link Investment — Zeta International</title>
+    <meta
+      name="description"
+      content="Your premier gateway for cross-Mediterranean investment. Connecting European opportunity with Tunisian ambition — through real estate, business, education, and beyond."
+    />
+    <meta
+      property="og:title"
+      content="Zeta Link Investment — Zeta International"
+    />
+    <meta
+      property="og:description"
+      content="Bridging investment opportunities between Europe and Tunisia."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ─── VARIABLES ───────────────────────────────────────────────────── */
+      :root {
+        --navy: #0a0f1e;
+        --navy-mid: #0d1530;
+        --navy-light: #152040;
+        --gold: #c9a84c;
+        --gold-light: #e5c97e;
+        --gold-dim: rgba(201, 168, 76, 0.15);
+        --white: #ffffff;
+        --white-dim: rgba(255, 255, 255, 0.75);
+        --white-muted: rgba(255, 255, 255, 0.45);
+        --border: rgba(201, 168, 76, 0.2);
+        --font-serif: "Cormorant Garamond", "Georgia", serif;
+        --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
+        --ease: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--navy);
+        color: var(--white);
+        font-family: var(--font-sans);
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      button {
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-family: inherit;
+      }
+      input,
+      textarea {
+        font-family: inherit;
+      }
+
+      /* ─── TYPOGRAPHY ──────────────────────────────────────────────────── */
+      .section-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        font-weight: 400;
+        line-height: 1.2;
+        color: var(--white);
+      }
+      h3 {
+        font-family: var(--font-serif);
+        font-size: clamp(1.4rem, 2.5vw, 2rem);
+        font-weight: 400;
+        line-height: 1.25;
+      }
+      p {
+        color: var(--white-dim);
+        line-height: 1.75;
+        font-size: 0.95rem;
+      }
+      .section-header {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 3.5rem;
+      }
+
+      /* ─── BUTTONS ─────────────────────────────────────────────────────── */
+      .btn-gold {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        transition: all var(--ease);
+        border: 2px solid var(--gold);
+      }
+      .btn-gold:hover {
+        background: var(--gold-light);
+        border-color: var(--gold-light);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        background: transparent;
+        color: var(--white);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        transition: all var(--ease);
+      }
+      .btn-outline:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      /* ─── NAV ─────────────────────────────────────────────────────────── */
+      .zeta-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 3rem;
+        transition:
+          background var(--ease),
+          padding var(--ease),
+          box-shadow var(--ease);
+      }
+      .zeta-nav.scrolled {
+        background: rgba(10, 15, 30, 0.97);
+        padding: 0.8rem 3rem;
+        box-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+      }
+      .zeta-logo {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+      }
+      .logo-main {
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--gold);
+      }
+      .logo-sub {
+        font-size: 0.55rem;
+        letter-spacing: 0.2em;
+        color: var(--white-muted);
+        margin-top: 2px;
+      }
+      .zeta-nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+      }
+      .zeta-nav-links a {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--white-dim);
+        transition: color var(--ease);
+        text-transform: uppercase;
+      }
+      .zeta-nav-links a:hover {
+        color: var(--gold);
+      }
+      .nav-cta {
+        padding: 0.5rem 1.4rem !important;
+        border: 1px solid var(--gold) !important;
+        color: var(--gold) !important;
+        font-size: 0.7rem !important;
+        letter-spacing: 0.15em !important;
+        transition: all var(--ease) !important;
+        display: inline-block !important;
+      }
+      .nav-cta:hover {
+        background: var(--gold) !important;
+        color: var(--navy) !important;
+      }
+      .lang-switcher {
+        display: flex;
+        gap: 0.25rem;
+        border: 1px solid var(--border);
+      }
+      .lang-switcher button {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: var(--white-muted);
+        transition: all var(--ease);
+      }
+      .lang-switcher button.active,
+      .lang-switcher button:hover {
+        background: var(--gold);
+        color: var(--navy);
+      }
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        padding: 5px;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--white);
+        transition: transform var(--ease);
+      }
+
+      /* ─── HERO ────────────────────────────────────────────────────────── */
+      .zeta-hero {
+        position: relative;
+        height: 100vh;
+        min-height: 650px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .hero-slideshow {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 0.7s ease;
+      }
+      .hero-slide.active {
+        opacity: 1;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(10, 15, 30, 0.88) 40%,
+          rgba(10, 15, 30, 0.5) 70%,
+          rgba(10, 15, 30, 0.3) 100%
+        );
+      }
+      .hero-flags {
+        position: absolute;
+        top: 5.5rem;
+        right: 3rem;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(10, 15, 30, 0.6);
+        border: 1px solid var(--border);
+        padding: 0.5rem 1rem;
+        backdrop-filter: blur(8px);
+      }
+      .flag-badge {
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+      .flag-divider {
+        color: var(--gold);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+      .hero-dots {
+        position: absolute;
+        bottom: 5.5rem;
+        right: 3rem;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .hero-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        transition: all var(--ease);
+        cursor: pointer;
+      }
+      .hero-dot.active {
+        background: var(--gold);
+        border-color: var(--gold);
+        transform: scale(1.3);
+      }
+      .hero-slide-caption {
+        position: absolute;
+        bottom: 5.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: var(--gold);
+        text-transform: uppercase;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        white-space: nowrap;
+      }
+      .hero-slide-caption.visible {
+        opacity: 1;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        padding: 0 3rem;
+        max-width: 720px;
+        margin-top: 5rem;
+      }
+      .hero-label {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: var(--gold);
+        margin-bottom: 1.25rem;
+      }
+      .label-line {
+        display: inline-block;
+        width: 2.5rem;
+        height: 1px;
+        background: var(--gold);
+      }
+      .hero-h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+        font-weight: 400;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        color: var(--white);
+      }
+      .hero-h1 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .hero-p {
+        font-size: 1rem;
+        color: var(--white-dim);
+        max-width: 520px;
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .hero-scroll {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        color: var(--white-muted);
+        transition: color var(--ease);
+        animation: bounceScroll 2s ease-in-out infinite;
+      }
+      .hero-scroll:hover {
+        color: var(--gold);
+      }
+      .scroll-arrow {
+        font-size: 1rem;
+      }
+      @keyframes bounceScroll {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(6px);
+        }
+      }
+
+      /* ─── TICKER ──────────────────────────────────────────────────────── */
+      .zeta-ticker {
+        background: var(--gold);
+        padding: 0.7rem 0;
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+      }
+      .ticker-track {
+        display: flex;
+        animation: ticker 40s linear infinite;
+        flex-shrink: 0;
+      }
+      .ticker-track span {
+        display: inline-block;
+        color: var(--navy);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        padding: 0 0.5rem;
+      }
+      @keyframes ticker {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ─── ABOUT ───────────────────────────────────────────────────────── */
+      .zeta-about {
+        padding: 6rem 3rem;
+        background: var(--navy-mid);
+      }
+      .about-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .about-text h2 {
+        margin-bottom: 1.5rem;
+      }
+      .about-text p {
+        margin-bottom: 1.25rem;
+      }
+      .about-text .btn-outline {
+        margin-top: 1rem;
+      }
+      .about-flags-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        align-items: center;
+      }
+      .flags-display {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .flag-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.5rem 2rem;
+        border: 1px solid var(--border);
+        background: var(--gold-dim);
+        transition: all var(--ease);
+        min-width: 120px;
+      }
+      .flag-card:hover {
+        border-color: var(--gold);
+        transform: translateY(-4px);
+      }
+      .flag-icon-large {
+        font-size: 3rem;
+        line-height: 1;
+      }
+      .flag-country-name {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        color: var(--gold);
+        text-transform: uppercase;
+      }
+      .flags-connector {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .connector-line {
+        width: 2rem;
+        height: 1px;
+        background: var(--gold);
+      }
+      .connector-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+      .about-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        width: 100%;
+      }
+      .stat-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.25rem;
+        border: 1px solid var(--border);
+        background: var(--gold-dim);
+        text-align: center;
+        transition: all var(--ease);
+      }
+      .stat-box:hover {
+        border-color: var(--gold);
+      }
+      .stat-n {
+        font-family: var(--font-serif);
+        font-size: 1.8rem;
+        color: var(--gold);
+        font-weight: 700;
+      }
+      .stat-l {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--white-muted);
+        text-transform: uppercase;
+        margin-top: 0.25rem;
+      }
+
+      /* ─── MARKETS ─────────────────────────────────────────────────────── */
+      .zeta-markets {
+        padding: 6rem 3rem;
+        background: var(--navy);
+      }
+      .market-tabs {
+        display: flex;
+        justify-content: center;
+        border: 1px solid var(--border);
+        max-width: 520px;
+        margin: 0 auto 3rem;
+      }
+      .market-tabs button {
+        flex: 1;
+        padding: 0.85rem 1.5rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--white-muted);
+        transition: all var(--ease);
+        text-transform: uppercase;
+      }
+      .market-tabs button.active {
+        background: var(--gold);
+        color: var(--navy);
+      }
+      .market-tabs button:not(.active):hover {
+        color: var(--gold);
+        background: var(--gold-dim);
+      }
+      .market-panel {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .market-content {
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem;
+        align-items: center;
+      }
+      .market-content.active {
+        display: grid;
+      }
+      .market-image-wrap {
+        position: relative;
+        overflow: hidden;
+      }
+      .market-img {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+      .market-image-wrap:hover .market-img {
+        transform: scale(1.04);
+      }
+      .market-flag-overlay {
+        position: absolute;
+        top: 1.25rem;
+        left: 1.25rem;
+        font-size: 3rem;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+      }
+      .market-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .market-info h3 {
+        margin-bottom: 0.25rem;
+      }
+      .market-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0.25rem 0;
+      }
+      .tag {
+        padding: 0.3rem 0.8rem;
+        background: var(--gold-dim);
+        border: 1px solid var(--border);
+        color: var(--gold);
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .market-sectors {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .sector-pill {
+        padding: 0.3rem 0.75rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: var(--white-dim);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: all var(--ease);
+      }
+      .sector-pill:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+
+      /* ─── SERVICES ────────────────────────────────────────────────────── */
+      .zeta-services {
+        padding: 6rem 3rem;
+        background: var(--navy-mid);
+      }
+      .services-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .svc-card {
+        padding: 2.5rem 2rem;
+        border: 1px solid var(--border);
+        background: var(--gold-dim);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        transition: all var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+      .svc-card::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transition: transform var(--ease);
+      }
+      .svc-card:hover {
+        border-color: var(--gold);
+        transform: translateY(-6px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      }
+      .svc-card:hover::before {
+        transform: scaleX(1);
+      }
+      .svc-icon {
+        font-size: 2rem;
+        line-height: 1;
+      }
+      .svc-card h4 {
+        font-size: 1.05rem;
+        font-family: var(--font-serif);
+        font-weight: 400;
+        color: var(--white);
+      }
+      .svc-card p {
+        font-size: 0.88rem;
+        flex: 1;
+      }
+      .svc-link {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: var(--gold);
+        text-transform: uppercase;
+        transition: color var(--ease);
+      }
+      .svc-link:hover {
+        color: var(--gold-light);
+      }
+
+      /* ─── CTA ─────────────────────────────────────────────────────────── */
+      .zeta-cta {
+        padding: 5rem 3rem;
+        background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+      }
+      .cta-inner {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .cta-inner h2 {
+        margin-bottom: 1rem;
+      }
+      .cta-inner p {
+        margin-bottom: 2rem;
+      }
+      .cta-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ─── CONTACT ─────────────────────────────────────────────────────── */
+      .zeta-contact {
+        padding: 6rem 3rem;
+        background: var(--navy);
+      }
+      .contact-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 5rem;
+        align-items: start;
+      }
+      .contact-info h2 {
+        margin-bottom: 1rem;
+      }
+      .contact-info p {
+        margin-bottom: 2rem;
+      }
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+      .contact-row {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.88rem;
+        color: var(--white-dim);
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        padding: 0.9rem 1.25rem;
+        background: var(--navy-mid);
+        border: 1px solid var(--border);
+        color: var(--white);
+        font-size: 0.9rem;
+        transition: border-color var(--ease);
+        resize: vertical;
+        outline: none;
+        width: 100%;
+      }
+      .contact-form input::placeholder,
+      .contact-form textarea::placeholder {
+        color: var(--white-muted);
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: var(--gold);
+      }
+      .form-submit {
+        align-self: flex-start;
+        padding: 0.9rem 2.5rem;
+      }
+
+      /* ─── FOOTER ──────────────────────────────────────────────────────── */
+      .zeta-footer {
+        background: #060b18;
+        padding: 4rem 3rem 0;
+        border-top: 1px solid var(--border);
+      }
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .footer-brand p {
+        font-size: 0.85rem;
+        margin-top: 1rem;
+        max-width: 280px;
+      }
+      .footer-flags {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+      .footer-col h5 {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .footer-col ul li {
+        font-size: 0.85rem;
+        color: var(--white-muted);
+        transition: color var(--ease);
+        cursor: pointer;
+      }
+      .footer-col ul li:hover {
+        color: var(--gold);
+      }
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.75rem;
+        color: var(--white-muted);
+      }
+
+      /* ─── RESPONSIVE ──────────────────────────────────────────────────── */
+      @media (max-width: 1024px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-inner {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .zeta-nav {
+          padding: 1rem 1.5rem;
+        }
+        .zeta-nav.scrolled {
+          padding: 0.7rem 1.5rem;
+        }
+        .zeta-nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 80%;
+          max-width: 320px;
+          height: 100vh;
+          background: var(--navy-mid);
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          padding: 4rem 2.5rem;
+          gap: 1.5rem;
+          transition: right var(--ease);
+          border-left: 1px solid var(--border);
+          z-index: 999;
+        }
+        .zeta-nav-links.open {
+          right: 0;
+        }
+        .zeta-nav-links a {
+          font-size: 1rem;
+        }
+        .menu-toggle {
+          display: flex;
+          z-index: 1001;
+        }
+        .hero-content {
+          padding: 0 1.5rem;
+        }
+        .hero-flags {
+          top: 4.5rem;
+          right: 1.5rem;
+        }
+        .hero-dots {
+          right: 1.5rem;
+        }
+        .hero-slide-caption {
+          bottom: 4rem;
+        }
+        .hero-h1 {
+          font-size: clamp(2rem, 7vw, 3rem);
+        }
+        .about-inner {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .market-content.active {
+          grid-template-columns: 1fr;
+        }
+        .market-img {
+          height: 280px;
+        }
+        .contact-inner {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 0.5rem;
+          text-align: center;
+        }
+        .zeta-about,
+        .zeta-markets,
+        .zeta-services,
+        .zeta-cta,
+        .zeta-contact {
+          padding: 4rem 1.5rem;
+        }
+        .market-tabs {
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 480px) {
+        .hero-btns {
+          flex-direction: column;
+        }
+        .about-stats {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+        .flags-display {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .flags-connector {
+          transform: rotate(90deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════ NAV ═══════════ -->
+    <nav class="zeta-nav" id="mainNav">
+      <a href="#home" class="zeta-logo">
+        <span class="logo-main">ZETA LINK</span>
+        <span class="logo-sub">INVESTMENT</span>
+      </a>
+      <div class="zeta-nav-links" id="navLinks">
+        <a href="#home" onclick="closeMenu()">HOME</a>
+        <a
+          href="#markets"
+          onclick="
+            setMarket('tunisia');
+            closeMenu();
+          "
+          id="nav-tn"
+          >🇹🇳 TUNISIA</a
+        >
+        <a
+          href="#markets"
+          onclick="
+            setMarket('europe');
+            closeMenu();
+          "
+          id="nav-eu"
+          >🇪🇺 EUROPE</a
+        >
+        <a href="#services" onclick="closeMenu()" id="nav-svc">SERVICES</a>
+        <a href="#about" onclick="closeMenu()" id="nav-about">ABOUT</a>
+        <a href="#contact" onclick="closeMenu()" id="nav-contact">CONTACT</a>
+        <div class="lang-switcher">
+          <button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+          <button onclick="setLang('fr')" id="btn-fr">FR</button>
+          <button onclick="setLang('it')" id="btn-it">IT</button>
+        </div>
+        <a href="#contact" class="nav-cta" onclick="closeMenu()">GET STARTED</a>
+      </div>
+      <button
+        class="menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Toggle menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section id="home" class="zeta-hero">
+      <div class="hero-slideshow">
+        <div
+          class="hero-slide active"
+          id="slide-0"
+          style="background-image: url(&quot;images/europe-bg.jpg&quot;)"
+        ></div>
+        <div
+          class="hero-slide"
+          id="slide-1"
+          style="background-image: url(&quot;images/tunisia-bg.jpg&quot;)"
+        ></div>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-flags">
+        <span class="flag-badge">🇹🇳</span>
+        <span class="flag-divider">×</span>
+        <span class="flag-badge">🇪🇺</span>
+      </div>
+      <div class="hero-dots">
+        <button
+          class="hero-dot active"
+          onclick="goToSlide(0)"
+          id="dot-0"
+        ></button>
+        <button class="hero-dot" onclick="goToSlide(1)" id="dot-1"></button>
+      </div>
+      <div class="hero-slide-caption visible" id="slideCaption">
+        🇪🇺 Discover Europe
+      </div>
+      <div class="hero-content">
+        <div class="hero-label">
+          <span class="label-line"></span
+          ><span id="hero-label">ZETA INTERNATIONAL · BRIDGING WORLDS</span>
+        </div>
+        <h1 class="hero-h1">
+          <span id="hero-h1a">Welcome to</span><br /><em id="hero-h1b"
+            >Zeta Link</em
+          >
+          <span id="hero-h1c">Investment</span>
+        </h1>
+        <p class="hero-p" id="hero-p">
+          Your premier gateway for cross-Mediterranean investment. Connecting
+          European opportunity with Tunisian ambition — through real estate,
+          business, education, and beyond.
+        </p>
+        <div class="hero-btns">
+          <a
+            href="#markets"
+            class="btn-outline"
+            id="hero-btn1"
+            onclick="setMarket('tunisia')"
+            >🇹🇳 INVEST IN TUNISIA</a
+          >
+          <a
+            href="#markets"
+            class="btn-gold"
+            id="hero-btn2"
+            onclick="setMarket('europe')"
+            >🇪🇺 INVEST IN EUROPE</a
+          >
+        </div>
+      </div>
+      <a href="#about" class="hero-scroll"
+        ><span id="scroll-lbl">SCROLL</span
+        ><span class="scroll-arrow">↓</span></a
+      >
+    </section>
+
+    <!-- ═══════════ TICKER ═══════════ -->
+    <div class="zeta-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span
+          >REAL ESTATE · BUSINESS SETUP · LEGAL EXCELLENCE · EU FUNDED PROJECTS
+          · EDUCATION ABROAD · TECHNOLOGY · AGRICULTURE · TEXTILE ·
+        </span>
+        <span
+          >REAL ESTATE · BUSINESS SETUP · LEGAL EXCELLENCE · EU FUNDED PROJECTS
+          · EDUCATION ABROAD · TECHNOLOGY · AGRICULTURE · TEXTILE ·
+        </span>
+        <span
+          >REAL ESTATE · BUSINESS SETUP · LEGAL EXCELLENCE · EU FUNDED PROJECTS
+          · EDUCATION ABROAD · TECHNOLOGY · AGRICULTURE · TEXTILE ·
+        </span>
+        <span
+          >REAL ESTATE · BUSINESS SETUP · LEGAL EXCELLENCE · EU FUNDED PROJECTS
+          · EDUCATION ABROAD · TECHNOLOGY · AGRICULTURE · TEXTILE ·
+        </span>
+      </div>
+    </div>
+
+    <!-- ═══════════ ABOUT ═══════════ -->
+    <section id="about" class="zeta-about">
+      <div class="about-inner">
+        <div class="about-text">
+          <div class="section-label" id="about-label">ZETA INTERNATIONAL</div>
+          <h2 id="about-h2a">Facilitating Investment</h2>
+          <h2 id="about-h2b" style="margin-bottom: 1.5rem">
+            Across the Mediterranean
+          </h2>
+          <p id="about-p1">
+            Zeta International facilitates the establishment of businesses in
+            Tunisia and Europe. We serve as the definitive bridge for European
+            investors seeking opportunities in Tunisia, and for Tunisian
+            investors expanding into European markets.
+          </p>
+          <p id="about-p2">
+            Top legal services, expert business consulting, curated real estate,
+            EU-funded project access, and study abroad services — all under one
+            prestigious platform.
+          </p>
+          <a
+            href="#contact"
+            class="btn-outline"
+            style="margin-top: 1rem"
+            id="about-btn"
+            >DISCOVER OUR STORY</a
+          >
+        </div>
+        <div class="about-flags-panel">
+          <div class="flags-display">
+            <div class="flag-card">
+              <div class="flag-icon-large">🇹🇳</div>
+              <div class="flag-country-name">Tunisia</div>
+            </div>
+            <div class="flags-connector">
+              <div class="connector-line"></div>
+              <div class="connector-dot"></div>
+              <div class="connector-line"></div>
+            </div>
+            <div class="flag-card">
+              <div class="flag-icon-large">🇪🇺</div>
+              <div class="flag-country-name">Europe</div>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-box">
+              <span class="stat-n">200+</span
+              ><span class="stat-l" id="stat1l">Investment Projects</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-n">15+</span
+              ><span class="stat-l" id="stat2l">Years Expertise</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-n">27</span
+              ><span class="stat-l" id="stat3l">EU Countries</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-n">98%</span
+              ><span class="stat-l" id="stat4l">Client Satisfaction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ MARKETS ═══════════ -->
+    <section id="markets" class="zeta-markets">
+      <div class="section-header">
+        <div class="section-label" id="market-label">CHOOSE YOUR MARKET</div>
+        <h2 id="market-h2">Where Do You Want to Invest?</h2>
+      </div>
+      <div class="market-tabs">
+        <button id="tab-tn" class="active" onclick="setMarket('tunisia')">
+          🇹🇳 INVEST IN TUNISIA
+        </button>
+        <button id="tab-eu" onclick="setMarket('europe')">
+          🇪🇺 INVEST IN EUROPE
+        </button>
+      </div>
+      <div class="market-panel">
+        <!-- Tunisia -->
+        <div class="market-content active" id="panel-tunisia">
+          <div class="market-image-wrap">
+            <img src="images/tunisia-bg.jpg" alt="Tunisia" class="market-img" />
+            <div class="market-flag-overlay">🇹🇳</div>
+          </div>
+          <div class="market-info">
+            <div class="section-label" id="tn-label">🇹🇳 Tunisia</div>
+            <h3 id="tn-h3">Gateway to Africa &amp; the Mediterranean</h3>
+            <p id="tn-p">
+              Tunisia offers exceptional investment conditions for European
+              businesses — strategic location, competitive costs, skilled
+              workforce, and EU free trade agreements. Explore real estate,
+              tech, agriculture, and more.
+            </p>
+            <div class="market-tags">
+              <span class="tag">15% CORPORATE TAX</span>
+              <span class="tag">EU FREE TRADE</span>
+              <span class="tag">2.8% GDP GROWTH</span>
+            </div>
+            <div class="market-sectors">
+              <span class="sector-pill">REAL ESTATE</span>
+              <span class="sector-pill">TECHNOLOGY</span>
+              <span class="sector-pill">AGRICULTURE</span>
+              <span class="sector-pill">TEXTILE</span>
+              <span class="sector-pill">EDUCATION</span>
+              <span class="sector-pill">EU PROJECTS</span>
+            </div>
+            <a href="#contact" class="btn-gold" id="tn-btn"
+              >EXPLORE TUNISIA →</a
+            >
+          </div>
+        </div>
+        <!-- Europe -->
+        <div class="market-content" id="panel-europe">
+          <div class="market-image-wrap">
+            <img src="images/europe-bg.jpg" alt="Europe" class="market-img" />
+            <div class="market-flag-overlay">🇪🇺</div>
+          </div>
+          <div class="market-info">
+            <div class="section-label" id="eu-label">🇪🇺 Europe</div>
+            <h3 id="eu-h3">Gateway to the World's Largest Market</h3>
+            <p id="eu-p">
+              Europe offers a stable, transparent legal environment with access
+              to 450 million consumers. Leverage EU-funded projects, established
+              infrastructure, and world-class institutions for your investment.
+            </p>
+            <div class="market-tags">
+              <span class="tag">450M+ CONSUMERS</span>
+              <span class="tag">27 EU COUNTRIES</span>
+              <span class="tag">STABLE MARKET</span>
+            </div>
+            <div class="market-sectors">
+              <span class="sector-pill">REAL ESTATE</span>
+              <span class="sector-pill">BUSINESS SETUP</span>
+              <span class="sector-pill">EU PROJECTS</span>
+              <span class="sector-pill">STUDY ABROAD</span>
+              <span class="sector-pill">LEGAL SERVICES</span>
+            </div>
+            <a href="#contact" class="btn-gold" id="eu-btn">EXPLORE EUROPE →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SERVICES ═══════════ -->
+    <section id="services" class="zeta-services">
+      <div class="section-header">
+        <div class="section-label" id="svc-label">WHAT WE OFFER</div>
+        <h2 id="svc-h2">Comprehensive Investment Services</h2>
+      </div>
+      <div class="services-grid" id="services-grid">
+        <div class="svc-card">
+          <div class="svc-icon">🏡</div>
+          <h4 id="s1t">Real Estate</h4>
+          <p id="s1d">
+            Premium properties in Europe and Tunisia — villas, commercial
+            spaces, and development land with exceptional returns.
+          </p>
+          <!-- <a href="#contact" class="svc-link" id="s1l">LEARN MORE →</a>-->
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">🏢</div>
+          <h4 id="s2t">Business Setup</h4>
+          <p id="s2d">
+            Complete business establishment in Tunisia and Europe. From legal
+            registration to full operational launch.
+          </p>
+          <!-- <a href="#contact" class="svc-link" id="s2l">LEARN MORE →</a> -->
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">⚖️</div>
+          <h4 id="s3t">Legal Services</h4>
+          <p id="s3d">
+            Top-tier legal counsel in both jurisdictions. Corporate law,
+            compliance, contracts, and regulatory affairs.
+          </p>
+          <!-- <a href="#contact" class="svc-link" id="s3l">LEARN MORE →</a> -->
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">🎓</div>
+          <h4 id="s4t">Education &amp; Training</h4>
+          <p id="s4d">
+            Study abroad programmes, university placement, and professional
+            training across Europe and Tunisia.
+          </p>
+          <!-- <a href="#contact" class="svc-link" id="s4l">LEARN MORE →</a> -->
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">💶</div>
+          <h4 id="s5t">EU Funded Projects</h4>
+          <p id="s5d">
+            Access and manage EU grant programmes — Horizon, ERDF, ESF, and more
+            for your ventures.
+          </p>
+          <!-- <a href="#contact" class="svc-link" id="s5l">LEARN MORE →</a> -->
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">📊</div>
+          <h4 id="s6t">Business Consulting</h4>
+          <p id="s6d">
+            Strategic consulting with top experts across technology,
+            agriculture, textile, and manufacturing sectors.
+          </p>
+          <!-- <a href="#contact" class="svc-link" id="s6l">LEARN MORE →</a> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section class="zeta-cta">
+      <div class="cta-inner">
+        <h2 id="cta-h2">Ready to Begin Your Investment Journey?</h2>
+        <p id="cta-p">
+          Speak with our specialists today. Whether exploring Tunisia or Europe,
+          Zeta Link is your trusted partner at every step.
+        </p>
+        <div class="cta-btns">
+          <a href="#contact" class="btn-gold" id="cta-btn1"
+            >SCHEDULE A CONSULTATION</a
+          >
+          <a href="#services" class="btn-outline" id="cta-btn2"
+            >VIEW ALL SERVICES</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CONTACT ═══════════ -->
+    <section id="contact" class="zeta-contact">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <div class="section-label" id="contact-label">GET IN TOUCH</div>
+          <h2 id="contact-h1">Start Your Investment Journey</h2>
+          <p id="contact-sub">
+            Our team of experts is ready to guide you through every step of your
+            Mediterranean investment journey.
+          </p>
+          <div class="contact-details">
+            <div class="contact-row">
+              <span>📍</span><span>Tunis, Tunisia</span>
+            </div>
+            <div class="contact-row">
+              <span>📍</span><span>Brussels, Belgium</span>
+            </div>
+            <div class="contact-row">
+              <span>✉️</span><span>info@zetalink.com</span>
+            </div>
+            <div class="contact-row">
+              <span>📞</span><span>+216 XX XXX XXX</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Your Email" />
+          </div>
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Your Message" rows="5"></textarea>
+          <button
+            type="submit"
+            class="btn-gold form-submit"
+            id="form-submit-btn"
+          >
+            SEND MESSAGE
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="zeta-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo-main">ZETA LINK</div>
+          <div class="logo-sub">INVESTMENT · ZETA INTERNATIONAL</div>
+          <p>
+            Bridging investment opportunities between Europe and Tunisia. Your
+            trusted cross-Mediterranean partner.
+          </p>
+          <div class="footer-flags">🇹🇳 &nbsp; 🇪🇺</div>
+        </div>
+        <div class="footer-col">
+          <h5>INVEST IN TUNISIA</h5>
+          <ul>
+            <li>Real Estate</li>
+            <li>Business Opportunities</li>
+            <li>EU Funded Projects</li>
+            <li>Education &amp; Training</li>
+            <li>Legal Services</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>INVEST IN EUROPE</h5>
+          <ul>
+            <li>Real Estate</li>
+            <li>Business Setup</li>
+            <li>EU Funded Projects</li>
+            <li>Study Abroad</li>
+            <li>Legal Services</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5 id="footer-contact-lbl">CONTACT</h5>
+          <ul>
+            <li>📍 Tunis, Tunisia</li>
+            <li>📍 Brussels, Belgium</li>
+            <li>✉️ info@zetalink.com</li>
+            <li>📞 +216 XX XXX XXX</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Zeta Link Investment · Zeta International Group</span>
+        <span id="footer-legal">Privacy Policy · Terms of Use</span>
+      </div>
+    </footer>
+
+    <script>
+      // ═══════════════════════════════════════════════════════════
+      //  TRANSLATIONS
+      // ═══════════════════════════════════════════════════════════
+      var TRANSLATIONS = {
+        en: {
+          "hero-label": "ZETA INTERNATIONAL · BRIDGING WORLDS",
+          "hero-h1a": "Welcome to",
+          "hero-h1b": "Zeta Link",
+          "hero-h1c": "Investment",
+          "hero-p":
+            "Your premier gateway for cross-Mediterranean investment. Connecting European opportunity with Tunisian ambition — through real estate, business, education, and beyond.",
+          "hero-btn1": "🇹🇳 INVEST IN TUNISIA",
+          "hero-btn2": "🇪🇺 INVEST IN EUROPE",
+          "scroll-lbl": "SCROLL",
+          "about-label": "ZETA INTERNATIONAL",
+          "about-h2a": "Facilitating Investment",
+          "about-h2b": "Across the Mediterranean",
+          "about-p1":
+            "Zeta International facilitates the establishment of businesses in Tunisia and Europe. We serve as the definitive bridge for European investors seeking opportunities in Tunisia, and for Tunisian investors expanding into European markets.",
+          "about-p2":
+            "Top legal services, expert business consulting, curated real estate, EU-funded project access, and study abroad services — all under one prestigious platform.",
+          "about-btn": "DISCOVER OUR STORY",
+          stat1l: "Investment Projects",
+          stat2l: "Years Expertise",
+          stat3l: "EU Countries",
+          stat4l: "Client Satisfaction",
+          "market-label": "CHOOSE YOUR MARKET",
+          "market-h2": "Where Do You Want to Invest?",
+          "tab-tn": "🇹🇳 INVEST IN TUNISIA",
+          "tab-eu": "🇪🇺 INVEST IN EUROPE",
+          "tn-label": "🇹🇳 Tunisia",
+          "tn-h3": "Gateway to Africa & the Mediterranean",
+          "tn-p":
+            "Tunisia offers exceptional investment conditions for European businesses — strategic location, competitive costs, skilled workforce, and EU free trade agreements. Explore real estate, tech, agriculture, and more.",
+          "tn-btn": "EXPLORE TUNISIA →",
+          "eu-label": "🇪🇺 Europe",
+          "eu-h3": "Gateway to the World's Largest Market",
+          "eu-p":
+            "Europe offers a stable, transparent legal environment with access to 450 million consumers. Leverage EU-funded projects, established infrastructure, and world-class institutions for your investment.",
+          "eu-btn": "EXPLORE EUROPE →",
+          "svc-label": "WHAT WE OFFER",
+          "svc-h2": "Comprehensive Investment Services",
+          s1t: "Real Estate",
+          s1d: "Premium properties in Europe and Tunisia — villas, commercial spaces, and development land with exceptional returns.",
+          s1l: "LEARN MORE →",
+          s2t: "Business Setup",
+          s2d: "Complete business establishment in Tunisia and Europe. From legal registration to full operational launch.",
+          s2l: "LEARN MORE →",
+          s3t: "Legal Services",
+          s3d: "Top-tier legal counsel in both jurisdictions. Corporate law, compliance, contracts, and regulatory affairs.",
+          s3l: "LEARN MORE →",
+          s4t: "Education & Training",
+          s4d: "Study abroad programmes, university placement, and professional training across Europe and Tunisia.",
+          s4l: "LEARN MORE →",
+          s5t: "EU Funded Projects",
+          s5d: "Access and manage EU grant programmes — Horizon, ERDF, ESF, and more for your ventures.",
+          s5l: "LEARN MORE →",
+          s6t: "Business Consulting",
+          s6d: "Strategic consulting with top experts across technology, agriculture, textile, and manufacturing sectors.",
+          s6l: "LEARN MORE →",
+          "cta-h2": "Ready to Begin Your Investment Journey?",
+          "cta-p":
+            "Speak with our specialists today. Whether exploring Tunisia or Europe, Zeta Link is your trusted partner at every step.",
+          "cta-btn1": "SCHEDULE A CONSULTATION",
+          "cta-btn2": "VIEW ALL SERVICES",
+          "contact-label": "GET IN TOUCH",
+          "contact-h1": "Start Your Investment Journey",
+          "contact-sub":
+            "Our team of experts is ready to guide you through every step of your Mediterranean investment journey.",
+          "form-submit-btn": "SEND MESSAGE",
+          "footer-contact-lbl": "CONTACT",
+          "footer-legal": "Privacy Policy · Terms of Use",
+          "nav-tn": "🇹🇳 TUNISIA",
+          "nav-eu": "🇪🇺 EUROPE",
+          "nav-svc": "SERVICES",
+          "nav-about": "ABOUT",
+          "nav-contact": "CONTACT",
+        },
+        fr: {
+          "hero-label": "ZETA INTERNATIONAL · PONTER LES MONDES",
+          "hero-h1a": "Bienvenue chez",
+          "hero-h1b": "Zeta Link",
+          "hero-h1c": "Investissement",
+          "hero-p":
+            "Votre passerelle privilégiée pour l'investissement transméditerranéen. Connecter les opportunités européennes avec l'ambition tunisienne — immobilier, affaires, éducation et bien plus.",
+          "hero-btn1": "🇹🇳 INVESTIR EN TUNISIE",
+          "hero-btn2": "🇪🇺 INVESTIR EN EUROPE",
+          "scroll-lbl": "DÉFILER",
+          "about-label": "ZETA INTERNATIONAL",
+          "about-h2a": "Faciliter l'Investissement",
+          "about-h2b": "À Travers la Méditerranée",
+          "about-p1":
+            "Zeta International facilite la création d'entreprises en Tunisie et en Europe.",
+          "about-p2":
+            "Services juridiques, conseil en affaires, immobilier, projets financés par l'UE et études à l'étranger — tout sur une seule plateforme.",
+          "about-btn": "DÉCOUVRIR NOTRE HISTOIRE",
+          stat1l: "Projets d'investissement",
+          stat2l: "Ans d'expertise",
+          stat3l: "Pays UE",
+          stat4l: "Satisfaction client",
+          "market-label": "CHOISISSEZ VOTRE MARCHÉ",
+          "market-h2": "Où Voulez-Vous Investir?",
+          "tab-tn": "🇹🇳 INVESTIR EN TUNISIE",
+          "tab-eu": "🇪🇺 INVESTIR EN EUROPE",
+          "tn-label": "🇹🇳 Tunisie",
+          "tn-h3": "Passerelle vers l'Afrique & la Méditerranée",
+          "tn-p":
+            "La Tunisie offre des conditions d'investissement exceptionnelles — emplacement stratégique, coûts compétitifs, main-d'œuvre qualifiée et accords de libre-échange avec l'UE.",
+          "tn-btn": "EXPLORER LA TUNISIE →",
+          "eu-label": "🇪🇺 Europe",
+          "eu-h3": "Accès au Plus Grand Marché Mondial",
+          "eu-p":
+            "L'Europe offre un environnement juridique stable et transparent avec accès à 450 millions de consommateurs.",
+          "eu-btn": "EXPLORER L'EUROPE →",
+          "svc-label": "CE QUE NOUS OFFRONS",
+          "svc-h2": "Services d'Investissement Complets",
+          s1t: "Immobilier",
+          s1d: "Propriétés premium en Europe et en Tunisie — villas, espaces commerciaux et terrains à développer.",
+          s1l: "EN SAVOIR PLUS →",
+          s2t: "Création d'Entreprise",
+          s2d: "Création complète d'entreprises en Tunisie et en Europe.",
+          s2l: "EN SAVOIR PLUS →",
+          s3t: "Services Juridiques",
+          s3d: "Conseil juridique de premier ordre dans les deux juridictions.",
+          s3l: "EN SAVOIR PLUS →",
+          s4t: "Éducation & Formation",
+          s4d: "Programmes d'études à l'étranger et placement universitaire.",
+          s4l: "EN SAVOIR PLUS →",
+          s5t: "Projets Financés UE",
+          s5d: "Accédez aux programmes de subventions UE — Horizon, FEDER, FSE.",
+          s5l: "EN SAVOIR PLUS →",
+          s6t: "Conseil en Affaires",
+          s6d: "Conseil stratégique avec des experts en technologie, agriculture et textile.",
+          s6l: "EN SAVOIR PLUS →",
+          "cta-h2": "Prêt à Commencer Votre Voyage d'Investissement?",
+          "cta-p": "Parlez avec nos spécialistes aujourd'hui.",
+          "cta-btn1": "PLANIFIER UNE CONSULTATION",
+          "cta-btn2": "VOIR TOUS LES SERVICES",
+          "contact-label": "CONTACTEZ-NOUS",
+          "contact-h1": "Commencez Votre Voyage d'Investissement",
+          "contact-sub": "Notre équipe d'experts est prête à vous guider.",
+          "form-submit-btn": "ENVOYER",
+          "footer-contact-lbl": "CONTACT",
+          "footer-legal":
+            "Politique de Confidentialité · Conditions d'Utilisation",
+          "nav-tn": "🇹🇳 TUNISIE",
+          "nav-eu": "🇪🇺 EUROPE",
+          "nav-svc": "SERVICES",
+          "nav-about": "À PROPOS",
+          "nav-contact": "CONTACT",
+        },
+        it: {
+          "hero-label": "ZETA INTERNATIONAL · COLLEGARE I MONDI",
+          "hero-h1a": "Benvenuti in",
+          "hero-h1b": "Zeta Link",
+          "hero-h1c": "Investment",
+          "hero-p":
+            "Il vostro gateway privilegiato per gli investimenti trans-mediterranei. Collegare le opportunità europee con le ambizioni tunisine — immobiliare, affari, istruzione e oltre.",
+          "hero-btn1": "🇹🇳 INVESTI IN TUNISIA",
+          "hero-btn2": "🇪🇺 INVESTI IN EUROPA",
+          "scroll-lbl": "SCORRI",
+          "about-label": "ZETA INTERNATIONAL",
+          "about-h2a": "Facilitare gli Investimenti",
+          "about-h2b": "Attraverso il Mediterraneo",
+          "about-p1":
+            "Zeta International facilita la creazione di imprese in Tunisia e in Europa.",
+          "about-p2":
+            "Servizi legali, consulenza aziendale, immobiliare, progetti finanziati dall'UE e studio all'estero — tutto in un'unica piattaforma.",
+          "about-btn": "SCOPRI LA NOSTRA STORIA",
+          stat1l: "Progetti d'investimento",
+          stat2l: "Anni di esperienza",
+          stat3l: "Paesi UE",
+          stat4l: "Soddisfazione clienti",
+          "market-label": "SCEGLI IL TUO MERCATO",
+          "market-h2": "Dove Vuoi Investire?",
+          "tab-tn": "🇹🇳 INVESTI IN TUNISIA",
+          "tab-eu": "🇪🇺 INVESTI IN EUROPA",
+          "tn-label": "🇹🇳 Tunisia",
+          "tn-h3": "Gateway per l'Africa e il Mediterraneo",
+          "tn-p":
+            "La Tunisia offre condizioni di investimento eccezionali — posizione strategica, costi competitivi, forza lavoro qualificata e accordi di libero scambio con l'UE.",
+          "tn-btn": "ESPLORA LA TUNISIA →",
+          "eu-label": "🇪🇺 Europa",
+          "eu-h3": "Accesso al Mercato Più Grande del Mondo",
+          "eu-p":
+            "L'Europa offre un ambiente legale stabile e trasparente con accesso a 450 milioni di consumatori.",
+          "eu-btn": "ESPLORA L'EUROPA →",
+          "svc-label": "COSA OFFRIAMO",
+          "svc-h2": "Servizi di Investimento Completi",
+          s1t: "Immobiliare",
+          s1d: "Proprietà premium in Europa e Tunisia — ville, spazi commerciali e terreni edificabili.",
+          s1l: "SCOPRI DI PIÙ →",
+          s2t: "Costituzione Società",
+          s2d: "Costituzione completa di società in Tunisia e in Europa.",
+          s2l: "SCOPRI DI PIÙ →",
+          s3t: "Servizi Legali",
+          s3d: "Consulenza legale di alto livello in entrambe le giurisdizioni.",
+          s3l: "SCOPRI DI PIÙ →",
+          s4t: "Istruzione & Formazione",
+          s4d: "Programmi di studio all'estero e collocamento universitario.",
+          s4l: "SCOPRI DI PIÙ →",
+          s5t: "Progetti Finanziati UE",
+          s5d: "Accedi ai programmi di sovvenzioni UE — Horizon, FESR, FSE.",
+          s5l: "SCOPRI DI PIÙ →",
+          s6t: "Consulenza Aziendale",
+          s6d: "Consulenza strategica con esperti in tecnologia, agricoltura e tessile.",
+          s6l: "SCOPRI DI PIÙ →",
+          "cta-h2": "Pronto a Iniziare il Tuo Percorso di Investimento?",
+          "cta-p": "Parla con i nostri specialisti oggi.",
+          "cta-btn1": "PIANIFICA UNA CONSULENZA",
+          "cta-btn2": "VEDI TUTTI I SERVIZI",
+          "contact-label": "CONTATTACI",
+          "contact-h1": "Inizia il Tuo Percorso di Investimento",
+          "contact-sub": "Il nostro team di esperti è pronto a guidarti.",
+          "form-submit-btn": "INVIA MESSAGGIO",
+          "footer-contact-lbl": "CONTATTI",
+          "footer-legal": "Privacy Policy · Termini di Utilizzo",
+          "nav-tn": "🇹🇳 TUNISIA",
+          "nav-eu": "🇪🇺 EUROPA",
+          "nav-svc": "SERVIZI",
+          "nav-about": "CHI SIAMO",
+          "nav-contact": "CONTATTI",
+        },
+      };
+
+      // ═══════════════════════════════════════════════════════════
+      //  STATE
+      // ═══════════════════════════════════════════════════════════
+      var currentLang = "en";
+      var currentSlide = 0;
+      var totalSlides = 2;
+      var slideCaptions = ["🇪🇺 Discover Europe", "🇹🇳 Discover Tunisia"];
+      var slideInterval;
+
+      // ═══════════════════════════════════════════════════════════
+      //  LANGUAGE
+      // ═══════════════════════════════════════════════════════════
+      function setLang(lang) {
+        currentLang = lang;
+        var T = TRANSLATIONS[lang];
+        // update all text nodes
+        for (var id in T) {
+          var el = document.getElementById(id);
+          if (el) el.textContent = T[id];
+        }
+        // update lang buttons
+        ["en", "fr", "it"].forEach(function (l) {
+          var btn = document.getElementById("btn-" + l);
+          if (btn) btn.className = l === lang ? "active" : "";
+        });
+        // update slide captions based on lang
+        if (lang === "fr")
+          slideCaptions = ["🇪🇺 Découvrir l'Europe", "🇹🇳 Découvrir la Tunisie"];
+        else if (lang === "it")
+          slideCaptions = ["🇪🇺 Scopri l'Europa", "🇹🇳 Scopri la Tunisia"];
+        else slideCaptions = ["🇪🇺 Discover Europe", "🇹🇳 Discover Tunisia"];
+        var cap = document.getElementById("slideCaption");
+        if (cap) cap.textContent = slideCaptions[currentSlide];
+      }
+
+      // ═══════════════════════════════════════════════════════════
+      //  SLIDESHOW
+      // ═══════════════════════════════════════════════════════════
+      function goToSlide(idx) {
+        var prev = document.getElementById("slide-" + currentSlide);
+        var prevDot = document.getElementById("dot-" + currentSlide);
+        if (prev) prev.classList.remove("active");
+        if (prevDot) prevDot.classList.remove("active");
+        currentSlide = idx;
+        var next = document.getElementById("slide-" + currentSlide);
+        var nextDot = document.getElementById("dot-" + currentSlide);
+        if (next) next.classList.add("active");
+        if (nextDot) nextDot.classList.add("active");
+        var cap = document.getElementById("slideCaption");
+        if (cap) cap.textContent = slideCaptions[currentSlide];
+      }
+      function startSlideshow() {
+        slideInterval = setInterval(function () {
+          goToSlide((currentSlide + 1) % totalSlides);
+        }, 5000);
+      }
+
+      // ═══════════════════════════════════════════════════════════
+      //  MARKET TABS
+      // ═══════════════════════════════════════════════════════════
+      function setMarket(market) {
+        ["tunisia", "europe"].forEach(function (m) {
+          var panel = document.getElementById("panel-" + m);
+          var tab = document.getElementById(
+            "tab-" + (m === "tunisia" ? "tn" : "eu"),
+          );
+          if (panel)
+            panel.className =
+              "market-content" + (m === market ? " active" : "");
+          if (tab) tab.className = m === market ? "active" : "";
+        });
+      }
+
+      // ═══════════════════════════════════════════════════════════
+      //  NAV
+      // ═══════════════════════════════════════════════════════════
+      function toggleMenu() {
+        var links = document.getElementById("navLinks");
+        links.classList.toggle("open");
+      }
+      function closeMenu() {
+        var links = document.getElementById("navLinks");
+        links.classList.remove("open");
+      }
+
+      // ═══════════════════════════════════════════════════════════
+      //  SCROLL — nav glass effect
+      // ═══════════════════════════════════════════════════════════
+      window.addEventListener("scroll", function () {
+        var nav = document.getElementById("mainNav");
+        if (window.scrollY > 60) nav.classList.add("scrolled");
+        else nav.classList.remove("scrolled");
+      });
+
+      // ═══════════════════════════════════════════════════════════
+      //  INIT
+      // ═══════════════════════════════════════════════════════════
+      document.addEventListener("DOMContentLoaded", function () {
+        startSlideshow();
+        setLang("en");
+      });
+    </script>
+  </body>
+</html>
